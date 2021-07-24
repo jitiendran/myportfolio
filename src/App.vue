@@ -1,6 +1,8 @@
 <template>
-    <div class="up">
-        up
+    <div class="up-wrap">
+        <div class="up" @click="jump">
+            <i class="fas fa-arrow-up"></i>
+        </div>
     </div>
     <Navbar id="home" />
     <Header />
@@ -15,15 +17,32 @@ import About from "./components/About/About.vue";
 @Options({
     components: { Header, Navbar, About },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+    jump(): void {
+        window.location.hash = "";
+        window.location.hash = "home";
+    }
+}
 </script>
 
 <style lang="scss">
-.up {
+.up-wrap {
     float: right;
     bottom: 0;
     left: 90%;
     position: fixed;
     font-size: 1.5em;
+    padding: 0.5em;
+    .up {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background: linear-gradient(to right, #7f00ff, #e100ff);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
 }
 </style>
