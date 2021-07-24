@@ -1,22 +1,29 @@
 <template>
-    Hello
+    <div class="up">
+        up
+    </div>
+    <Navbar id="home" />
+    <Header />
+    <About id="about" />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import Header from "./components/Header/Header.vue";
+import Navbar from "./components/Navbar/Navbar.vue";
+import About from "./components/About/About.vue";
 @Options({
-    components: {},
+    components: { Header, Navbar, About },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+.up {
+    float: right;
+    bottom: 0;
+    left: 90%;
+    position: fixed;
+    font-size: 1.5em;
 }
 </style>
