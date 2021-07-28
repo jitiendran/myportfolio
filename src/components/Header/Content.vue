@@ -36,9 +36,11 @@ document.onreadystatechange = () => {
 export default {
     methods: {
         goToAbout: () => {
+            window.location.hash = "";
             window.location.hash = "about";
         },
         goToWorks: () => {
+            window.location.hash = "";
             window.location.hash = "work";
         },
     },

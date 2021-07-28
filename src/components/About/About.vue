@@ -50,7 +50,7 @@
                     <h3>My Skills</h3>
                     <div class="row" v-for="skill in skills" :key="skill">
                         <div class="skillname">
-                            {{ filterSkill(skill.Name) }}
+                            <img :src="skill.Name" />
                         </div>
                         <div class="skills">
                             <div
@@ -73,18 +73,66 @@ export default {
     data: () => {
         return {
             skills: [
-                { Name: "Angular", Color: "#DF1C35", level: 0.9 },
-                { Name: "TypeScript", Color: "#1976D2", level: 0.9 },
-                { Name: "Javascript", Color: "#FED601", level: 0.85 },
-                { Name: "SCSS", Color: "#CA6397", level: 0.9 },
-                { Name: "CSS", Color: "#0377BC", level: 0.9 },
-                { Name: "GraphQL", Color: "#FF4081", level: 0.8 },
-                { Name: "Cplusplus", Color: "#0086D4", level: 0.65 },
-                { Name: "Java", Color: "rgb(245,71,59)", level: 0.5 },
-                { Name: "Python", Color: "#FEC007", level: 0.6 },
-                { Name: "MYSQL", Color: "#168F93", level: 0.6 },
-                { Name: "MongoDB", Color: "#4DAF51", level: 0.75 },
-                { Name: "C", Color: "#000101", level: 0.45 },
+                {
+                    Name: require("../../assets/icons/angular.png"),
+                    Color: "#DF1C35",
+                    level: 0.9,
+                },
+                {
+                    Name: require("../../assets/icons/ts.png"),
+                    Color: "#1976D2",
+                    level: 0.9,
+                },
+                {
+                    Name: require("../../assets/icons/js.png"),
+                    Color: "#FED601",
+                    level: 0.85,
+                },
+                {
+                    Name: require("../../assets/icons/sass.png"),
+                    Color: "#CA6397",
+                    level: 0.9,
+                },
+                {
+                    Name: require("../../assets/icons/css.png"),
+                    Color: "#0377BC",
+                    level: 0.9,
+                },
+                {
+                    Name: require("../../assets/icons/graphql.png"),
+                    Color: "#FF4081",
+                    level: 0.8,
+                },
+                {
+                    Name: require("../../assets/icons/c++.png"),
+                    Color: "#0086D4",
+                    level: 0.65,
+                },
+                {
+                    Name: require("../../assets/icons/java.png"),
+                    Color: "rgb(245,71,59)",
+                    level: 0.5,
+                },
+                {
+                    Name: require("../../assets/icons/python.png"),
+                    Color: "#FEC007",
+                    level: 0.6,
+                },
+                {
+                    Name: require("../../assets/icons/mysql.png"),
+                    Color: "#168F93",
+                    level: 0.6,
+                },
+                {
+                    Name: require("../../assets/icons/mongodb.png"),
+                    Color: "#4DAF51",
+                    level: 0.75,
+                },
+                {
+                    Name: require("../../assets/icons/c.png"),
+                    Color: "#3949AB",
+                    level: 0.45,
+                },
             ],
         };
     },
@@ -100,22 +148,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../scss/abstract";
+
 .about {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: $primary_font;
+    @include smooth-font;
     padding: 2em;
     .header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex(
+            $direction: column,
+            $align-items: center,
+            $justify-content: center,
+            $gap: 0
+        );
         h3 {
-            text-transform: uppercase;
-            font-size: 2em;
+            @include font(
+                $font-family: $nav-font,
+                $font-size: 4.5em,
+                $font-weight: 800
+            );
         }
         .content {
-            color: #2c3e50;
+            color: $primary_color;
             margin-top: 0.75em;
             font-weight: 600;
             font-size: 1.3em;
@@ -124,7 +178,7 @@ export default {
             margin-top: 1.5em;
             height: 2.2px;
             width: 13em;
-            background: #ccc;
+            background: $grey;
         }
         .main-grid {
             width: 100%;
@@ -134,26 +188,33 @@ export default {
             grid-template-columns: repeat(2, 1fr);
             .my-skills {
                 width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                gap: 1.5em;
+                @include flex(
+                    $direction: column,
+                    $align-items: center,
+                    $justify-content: center,
+                    $gap: 0.3em
+                );
                 h3 {
-                    font-size: 1.5em;
+                    @include font(
+                        $font-family: inherit,
+                        $font-size: 1.5em,
+                        $font-weight: 600
+                    );
                     margin-bottom: 1em;
+                    text-transform: capitalize;
                     color: #2c3e50;
                 }
                 .row {
                     width: 100%;
                     display: flex;
-                    align-items: baseline;
+                    align-items: center;
                     padding: 0em 3em;
-                    gap: 0.5em;
+                    gap: 5.5em;
                     .skillname {
-                        font-size: 1.3em;
-                        font-weight: 600;
-                        width: 40%;
+                        img {
+                            width: 40px;
+                            height: 40px;
+                        }
                     }
                     .skills {
                         width: 60%;
