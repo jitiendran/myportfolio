@@ -1,10 +1,10 @@
-<template>
+<template id="home">
     <div class="up-wrap">
         <div class="up" @click="jump">
             <i class="fas fa-arrow-up"></i>
         </div>
     </div>
-    <Navbar id="home" />
+    <Navbar />
     <Header />
     <About id="about" />
 </template>

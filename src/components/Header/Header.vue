@@ -13,26 +13,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../scss/abstract";
+
 .header {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     height: 84vh;
     .navbar {
-        display: flex;
-        justify-content: flex-end;
-        gap: 1.5em;
         padding: 2em;
-        font-size: 1.5em;
-        font-weight: 600;
         margin: auto;
-        a {
-            color: #2c3e50;
-            text-decoration: none;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+        @include flex(
+            $direction: row,
+            $align-items: center,
+            $justify-content: flex-end,
+            $gap: 1.5em
+        );
     }
 }
 </style>

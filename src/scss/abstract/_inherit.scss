@@ -1,0 +1,12 @@
+%links {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+%buttons {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

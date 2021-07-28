@@ -1,0 +1,17 @@
+//Fonts Declaration
+
+@font-face {
+    font-family: "black-pink-cursive-font";
+    src: url("../../assets/fonts/black-pink-cursive-font//BlackPinkCursive-owXyz.otf");
+}
+
+@font-face {
+    font-family: "soul-signature";
+    src: url("../../assets/fonts/soul-signature-font/SoulSignature-vmXBM.ttf");
+}
+
+//Fonts
+
+$primary_font: Avenir, Helvetica, Arial, sans-serif;
+$title-cursive: "black-pink-cursive-font", sans-serif;
+$nav-font: "soul-signature", sans-serif;

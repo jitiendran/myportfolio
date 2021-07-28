@@ -4,8 +4,8 @@
             <h3>Hey There!</h3>
             <h3>I am <span id="text" class="info-text"></span></h3>
             <div class="btn-wrap">
-                <button>About Me</button>
-                <button>My Works</button>
+                <button @click="goToAbout">About Me</button>
+                <button @click="goToWorks">My Works</button>
             </div>
         </div>
         <div class="img">
@@ -33,44 +33,69 @@ document.onreadystatechange = () => {
     }
 };
 
-export default {};
+export default {
+    methods: {
+        goToAbout: () => {
+            window.location.hash = "about";
+        },
+        goToWorks: () => {
+            window.location.hash = "work";
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
+@import "../../scss/abstract";
+
 .content {
     display: grid;
     padding: 2em;
     grid-template-columns: repeat(2, 1fr);
+    @include font(
+        $font-family: $primary_font,
+        $font-size: 1.1em,
+        $font-weight: 600
+    );
+    @include smooth-font;
     .info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        @include flex(
+            $direction: column,
+            $align-items: center,
+            $justify-content: center,
+            $gap: 0
+        );
         h3 {
-            font-size: 2.2em;
-            font-weight: 600;
-            .info-text {
-                background: linear-gradient(to right, #7f00ff, #e100ff);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+            @include font(
+                $font-family: inherit,
+                $font-size: 1.9em,
+                $font-weight: 600
+            );
+            @include smooth-font;
             margin-bottom: 1.5em;
+            .info-text {
+                @include gradient-text($background: $primary_gradient);
+            }
         }
         .btn-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+            @include flex(
+                $direction: row,
+                $align-items: center,
+                $justify-content: space-around,
+                $gap: 0
+            );
             width: 100%;
             button {
-                outline: none;
-                border: none;
                 padding: 0.5em 0.75em;
                 border-radius: 0.3em;
-                font-weight: 600;
-                font-size: 1.3em;
-                cursor: pointer;
+                @include font(
+                    $font-family: inherit,
+                    $font-size: 1.25em,
+                    $font-weight: 600
+                );
+                @extend %buttons;
                 &:nth-child(1) {
-                    background: linear-gradient(to right, #7f00ff, #e100ff);
+                    background: $primary_gradient;
                     color: #fff;
                 }
                 &:hover {
@@ -80,11 +105,14 @@ export default {};
         }
     }
     .img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(
+            $direction: row,
+            $align-items: center,
+            $justify-content: center,
+            $gap: 0
+        );
         .blob {
-            background: linear-gradient(to right, #7f00ff, #e100ff);
+            background: $primary_gradient;
             border-radius: 30% 70% 70% 30% / 30% 34% 66% 70%;
             margin-top: 5em;
             width: 405px;
