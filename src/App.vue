@@ -7,6 +7,8 @@
     <Navbar />
     <Header />
     <About />
+    <Works />
+    <Footer />
 </template>
 
 <script lang="ts">
@@ -14,8 +16,11 @@ import { Options, Vue } from "vue-class-component";
 import Header from "./components/Header/Header.vue";
 import Navbar from "./components/Navbar/Navbar.vue";
 import About from "./components/About/About.vue";
+import Works from "./components/Works/Works.vue";
+import Footer from "./components/Footer/Footer.vue";
+
 @Options({
-    components: { Header, Navbar, About },
+    components: { Header, Navbar, About, Works, Footer },
 })
 export default class App extends Vue {
     jump(): void {
@@ -33,6 +38,7 @@ export default class App extends Vue {
     position: fixed;
     font-size: 1.5em;
     padding: 0.5em;
+    z-index: 10;
     .up {
         width: 40px;
         height: 40px;
@@ -43,6 +49,7 @@ export default class App extends Vue {
         align-items: center;
         justify-content: center;
         color: #fff;
+        box-shadow: 1px 1px 15px 6px #fff;
     }
 }
 </style>

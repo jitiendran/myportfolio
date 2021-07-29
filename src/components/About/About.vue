@@ -41,8 +41,8 @@
                 </div>
             </div>
         </div>
+        <Education />
     </div>
-    <Education />
 </template>
 
 <script lang="ts">

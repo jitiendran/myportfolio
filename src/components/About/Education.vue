@@ -1,6 +1,9 @@
 <template>
     <div class="education">
-        <h3>Education</h3>
+        <div class="header">
+            <h3>Education</h3>
+            <div class="underline"></div>
+        </div>
         <Timeline :education="educationList" />
     </div>
 </template>
@@ -39,13 +42,26 @@ export default {
 <style lang="scss" scoped>
 @import "../../scss/abstract";
 .education {
-    h3 {
-        @include font(
-            $font-family: $nav-font,
-            $font-size: 4.5em,
-            $font-weight: 800
+    .header {
+        @include flex(
+            $direction: column,
+            $align-items: center,
+            $justify-content: center,
+            $gap: 0.2em
         );
-        text-align: center;
+        margin-bottom: 2em;
+        h3 {
+            @include font(
+                $font-family: $nav-font,
+                $font-size: 4.5em,
+                $font-weight: 800
+            );
+        }
+        .underline {
+            height: 2.6px;
+            width: 9em;
+            background: #ccc;
+        }
     }
 }
 </style>
