@@ -6,7 +6,7 @@
     </div>
     <Navbar />
     <Header />
-    <About id="about" />
+    <About />
 </template>
 
 <script lang="ts">

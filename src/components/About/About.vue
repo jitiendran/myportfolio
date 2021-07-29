@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="about" id="about">
         <div class="header">
             <h3>About</h3>
             <div class="content">
@@ -9,68 +9,47 @@
             <div class="underline"></div>
             <div class="main-grid">
                 <div class="my-details">
-                    <span
-                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I
-                        am Jitiendran. I am currently pursuing B.E Computer
-                        Science in Anna University, MIT Campus, Chennai. I did
-                        my HSC(Computer Science Group) in Prince Matriculation
-                        Higher Secondary School, Chennai.</span
-                    >
-                    <span
-                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Though I studied Computer
-                        Science in HSC, I had hard time grasping the concepts in
-                        the beginning. But eventually I understood the concepts
-                        and web development became my favourite concept.</span
-                    >
-                    <span
-                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On December 2020, I
-                        joined Datacenter team of our college department as UI
-                        developer. Datacenter team's job is to develop an
-                        application where all the staff, students can interact.
-                        Datacenter team has three teams UI, Angular and
-                        Backend(NodeJs,GraphQL).</span
-                    >
-                    <span
-                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I gradually started
-                        studying Angular and made several small projects for
-                        grasping. Then i made a larger application for creative
-                        and innovative project course in Angular. After learning
-                        Angular, I started learning GraphQL and NodeJS , So that
-                        I can understand the queries made by Datacenter Backend
-                        team and started working in Angular.</span
-                    >
-                    <span
-                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rather than techincall
-                        skills, I also have studied keyboard for 5 years and I
-                        also have a India record for playing
-                        keyboard(blindfolded) for seven hours.
-                    </span>
-                </div>
-                <div class="my-skills">
-                    <h3>My Skills</h3>
-                    <div class="row" v-for="skill in skills" :key="skill">
-                        <div class="skillname">
-                            <img :src="skill.Name" />
-                        </div>
-                        <div class="skills">
+                    <div class="details">
+                        <h3>Jitiendran KS.</h3>
+                        <span
+                            >Hello, my name is Jitiendran KS. I am a UI Designer
+                            and a
+                            <span class="grad-text">Frontend Developer</span>
+                        </span>
+                        <div class="my-skills">
                             <div
-                                class="skill"
-                                :style="{
-                                    background: skill.Color,
-                                    width: calculate(skill.level),
-                                }"
-                            ></div>
+                                class="row"
+                                v-for="skill in skills"
+                                :key="skill"
+                            >
+                                <div class="skillname">
+                                    <img :src="skill.Name" />
+                                </div>
+                                <div class="skills">
+                                    <div
+                                        class="skill"
+                                        :style="{
+                                            background: skill.Color,
+                                            width: calculate(skill.level),
+                                        }"
+                                    ></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="img"></div>
                 </div>
             </div>
         </div>
     </div>
+    <Education />
 </template>
 
 <script lang="ts">
+import Education from "./Education.vue";
 export default {
-    data: () => {
+    components: { Education },
+    data() {
         return {
             skills: [
                 {
@@ -184,59 +163,69 @@ export default {
             width: 100%;
             padding: 1em;
             margin-top: 2.5em;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            .my-skills {
-                width: 100%;
-                @include flex(
-                    $direction: column,
-                    $align-items: center,
-                    $justify-content: center,
-                    $gap: 0.3em
-                );
-                h3 {
-                    @include font(
-                        $font-family: inherit,
-                        $font-size: 1.5em,
-                        $font-weight: 600
-                    );
-                    margin-bottom: 1em;
-                    text-transform: capitalize;
-                    color: #2c3e50;
-                }
-                .row {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    padding: 0em 3em;
-                    gap: 5.5em;
-                    .skillname {
-                        img {
-                            width: 40px;
-                            height: 40px;
-                        }
-                    }
-                    .skills {
-                        width: 60%;
-                        height: 8px;
-                        .skill {
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 1em;
-                        }
-                    }
-                }
-            }
             .my-details {
-                display: flex;
-                flex-direction: column;
-                gap: 2em;
-                padding: 1em 2em;
-                & > span {
-                    font-size: 1.25em;
-                    font-weight: 600;
-                    text-align: justify;
-                    color: #2c3e50;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1em;
+                .details {
+                    @include flex(
+                        $direction: column,
+                        $align-items: none,
+                        $justify-content: none,
+                        $gap: 0.5em
+                    );
+                    h3 {
+                        font-size: 2.3em;
+                        font-family: $primary_font;
+                        font-weight: 600;
+                    }
+                    .grad-text {
+                        font-weight: 600;
+                        @include gradient-text($background: $primary_gradient);
+                    }
+                    & > span {
+                        font-size: 1.5em;
+                        font-weight: 500;
+                        color: $accent_color;
+                        line-height: 1.3;
+                    }
+                }
+                .my-skills {
+                    width: 100%;
+                    margin-top: 1em;
+                    @include flex(
+                        $direction: column,
+                        $align-items: center,
+                        $justify-content: center,
+                        $gap: 0.3em
+                    );
+                    .row {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 5.5em;
+                        .skillname {
+                            img {
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                        .skills {
+                            width: 60%;
+                            height: 8px;
+                            .skill {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 1em;
+                            }
+                        }
+                    }
+                }
+                .img {
+                    background: url("../../assets/svgs/skill.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
                 }
             }
         }
