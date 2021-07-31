@@ -72,6 +72,9 @@
         }
     }
     @media all and (max-width: 769px) {
+        h3 {
+            font-weight: 800;
+        }
         font-size: 0.9em;
         width: 100%;
         .content {

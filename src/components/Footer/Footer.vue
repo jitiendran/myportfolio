@@ -95,8 +95,14 @@
         font-size: 0.7em;
         width: 100%;
         .content {
+            h3 {
+                font-weight: 800;
+            }
             p {
                 text-align: center;
+            }
+            .copywright {
+                font-weight: 800;
             }
         }
     }

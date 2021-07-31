@@ -143,6 +143,7 @@ export default {
     @media all and (max-width: 769px) {
         .info {
             h3 {
+                font-weight: 800;
                 margin-bottom: 0;
             }
             .auto {

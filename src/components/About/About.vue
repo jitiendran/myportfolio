@@ -244,6 +244,16 @@ export default {
                 text-align: center;
                 .my-details {
                     display: flex;
+                    .details {
+                        h3 {
+                            font-weight: 800;
+                        }
+                        span {
+                            .grad-text {
+                                font-weight: 800;
+                            }
+                        }
+                    }
                     .img {
                         display: none;
                     }
