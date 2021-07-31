@@ -193,6 +193,7 @@ export default {
                 .my-skills {
                     width: 100%;
                     margin-top: 1em;
+                    overflow: hidden;
                     @include flex(
                         $direction: column,
                         $align-items: center,
@@ -231,13 +232,16 @@ export default {
         }
     }
     @media all and (max-width: 769px) {
-        padding: 1em;
-        width: 113%;
+        font-size: 0.7em;
+        padding: 1.25em;
+        width: 100%;
         .header {
             .content {
                 text-align: center;
             }
             .main-grid {
+                font-size: 0.95em;
+                text-align: center;
                 .my-details {
                     display: flex;
                     .img {
@@ -246,15 +250,6 @@ export default {
                 }
             }
         }
-    }
-    @media all and (max-width: 426px) {
-        width: 166.5%;
-    }
-    @media all and (max-width: 376px) {
-        width: 179.2%;
-    }
-    @media all and (max-width: 321px) {
-        width: 201.5%;
     }
 }
 </style>

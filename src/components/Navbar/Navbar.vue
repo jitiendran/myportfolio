@@ -42,6 +42,7 @@
         padding: 0.4em 0.45em;
         border-radius: 50%;
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+        z-index: 10;
     }
 
     .title {
@@ -139,6 +140,7 @@
         }
     }
     @media all and (max-width: 426px) {
+        font-size: 0.8em;
         .sidenav {
             width: 50%;
             margin-left: -50%;

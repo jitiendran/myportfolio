@@ -46,4 +46,17 @@
             font-weight: normal;
         }
     }
+    @media all and (max-width: 769px) {
+        width: 100%;
+        &::after {
+            display: none;
+        }
+        .text {
+            left: 0;
+            width: 100%;
+            &::after {
+                display: none;
+            }
+        }
+    }
 }

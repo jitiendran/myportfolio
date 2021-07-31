@@ -63,5 +63,8 @@ export default {
             background: #ccc;
         }
     }
+    @media all and (max-width: 729px) {
+        width: 100%;
+    }
 }
 </style>

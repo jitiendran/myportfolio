@@ -52,7 +52,7 @@ export default {
 
 .content {
     display: grid;
-    padding: 1em;
+    padding: 1.25em;
     grid-template-columns: repeat(2, 1fr);
     @include font(
         $font-family: $primary_font,
@@ -154,29 +154,29 @@ export default {
     }
 
     @media all and (max-width: 426px) {
+        font-size: 0.7em;
         .info {
             .auto {
+                text-align: center;
                 padding: 1em;
             }
         }
         .img {
             .blob {
                 width: 100%;
-                height: 300px;
+                height: 200px;
                 img {
-                    width: 86%;
-                    height: 350px;
+                    width: 90%;
+                    height: 110%;
                 }
             }
         }
     }
     @media all and (max-width: 376px) {
-        padding: 0.5em;
-    }
-    @media all and (max-width: 321px) {
+        font-size: 0.65em;
         .info {
             .auto {
-                height: 4.75em;
+                height: 6em;
             }
         }
     }

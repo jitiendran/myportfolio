@@ -91,5 +91,14 @@
             font-weight: 600;
         }
     }
+    @media all and (max-width: 769px) {
+        font-size: 0.7em;
+        width: 100%;
+        .content {
+            p {
+                text-align: center;
+            }
+        }
+    }
 }
 </style>

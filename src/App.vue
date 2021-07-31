@@ -54,16 +54,8 @@ export default class App extends Vue {
         box-shadow: 1px 1px 15px 6px #fff;
     }
     @media all and (max-width: 769px) {
-        width: 113%;
-    }
-    @media all and (max-width: 426px) {
-        width: 169.5%;
-    }
-    @media all and (max-width: 376px) {
-        width: 179.2%;
-    }
-    @media all and (max-width: 321px) {
-        width: 201.5%;
+        width: 100%;
+        left: 84%;
     }
 }
 </style>

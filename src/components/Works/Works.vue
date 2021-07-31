@@ -71,5 +71,12 @@
             color: #000;
         }
     }
+    @media all and (max-width: 769px) {
+        font-size: 0.9em;
+        width: 100%;
+        .content {
+            padding: 1.25em;
+        }
+    }
 }
 </style>
