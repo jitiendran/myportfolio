@@ -230,5 +230,31 @@ export default {
             }
         }
     }
+    @media all and (max-width: 769px) {
+        padding: 1em;
+        width: 113%;
+        .header {
+            .content {
+                text-align: center;
+            }
+            .main-grid {
+                .my-details {
+                    display: flex;
+                    .img {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @media all and (max-width: 426px) {
+        width: 166.5%;
+    }
+    @media all and (max-width: 376px) {
+        width: 179.2%;
+    }
+    @media all and (max-width: 321px) {
+        width: 201.5%;
+    }
 }
 </style>

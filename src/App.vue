@@ -1,14 +1,16 @@
-<template id="home">
-    <div class="up-wrap">
-        <div class="up" @click="jump">
-            <i class="fas fa-arrow-up"></i>
+<template>
+    <div id="home">
+        <div class="up-wrap">
+            <div class="up" @click="jump">
+                <i class="fas fa-arrow-up"></i>
+            </div>
         </div>
+        <Navbar />
+        <Header />
+        <About />
+        <Works />
+        <Footer />
     </div>
-    <Navbar />
-    <Header />
-    <About />
-    <Works />
-    <Footer />
 </template>
 
 <script lang="ts">
@@ -50,6 +52,18 @@ export default class App extends Vue {
         justify-content: center;
         color: #fff;
         box-shadow: 1px 1px 15px 6px #fff;
+    }
+    @media all and (max-width: 769px) {
+        width: 113%;
+    }
+    @media all and (max-width: 426px) {
+        width: 169.5%;
+    }
+    @media all and (max-width: 376px) {
+        width: 179.2%;
+    }
+    @media all and (max-width: 321px) {
+        width: 201.5%;
     }
 }
 </style>

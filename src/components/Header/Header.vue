@@ -27,5 +27,18 @@ export default {
             $gap: 1.5em
         );
     }
+
+    @media all and (max-width: 769px) {
+        width: 113%;
+    }
+    @media all and (max-width: 426px) {
+        width: 166.5%;
+    }
+    @media all and (max-width: 376px) {
+        width: 179.2%;
+    }
+    @media all and (max-width: 321px) {
+        width: 201.5%;
+    }
 }
 </style>

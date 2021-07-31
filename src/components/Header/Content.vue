@@ -2,7 +2,7 @@
     <div class="content">
         <div class="info">
             <h3>Hey There!</h3>
-            <h3>I am <span id="text" class="info-text"></span></h3>
+            <h3 class="auto">I am <span id="text" class="info-text"></span></h3>
             <div class="btn-wrap">
                 <button @click="goToAbout">About Me</button>
                 <button @click="goToWorks">My Works</button>
@@ -25,9 +25,9 @@ document.onreadystatechange = () => {
             showCursor: false,
             strings: [
                 "Jitiendran KS",
-                "Currently Studing at MIT",
+                "Currently Studying at MIT",
                 "a Frontend Developer",
-                " a Angular Geek",
+                "a Angular Geek",
             ],
         });
     }
@@ -52,7 +52,7 @@ export default {
 
 .content {
     display: grid;
-    padding: 2em;
+    padding: 1em;
     grid-template-columns: repeat(2, 1fr);
     @include font(
         $font-family: $primary_font,
@@ -137,6 +137,47 @@ export default {
     @keyframes blink {
         50% {
             opacity: 0;
+        }
+    }
+
+    @media all and (max-width: 769px) {
+        .info {
+            h3 {
+                margin-bottom: 0;
+            }
+            .auto {
+                margin-bottom: 0;
+                padding: 0.5em;
+                height: 4em;
+            }
+        }
+    }
+
+    @media all and (max-width: 426px) {
+        .info {
+            .auto {
+                padding: 1em;
+            }
+        }
+        .img {
+            .blob {
+                width: 100%;
+                height: 300px;
+                img {
+                    width: 86%;
+                    height: 350px;
+                }
+            }
+        }
+    }
+    @media all and (max-width: 376px) {
+        padding: 0.5em;
+    }
+    @media all and (max-width: 321px) {
+        .info {
+            .auto {
+                height: 4.75em;
+            }
         }
     }
 }
