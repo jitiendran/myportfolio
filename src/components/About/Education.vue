@@ -18,7 +18,7 @@ export default {
             educationList: [
                 {
                     Year: "2018 - Present",
-                    InstituteName: "Madras Institutte Of Technology",
+                    InstituteName: "Madras Institute Of Technology",
                     Program: "B.E Computer Science",
                 },
                 {
